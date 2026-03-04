@@ -1,0 +1,60 @@
+{
+  "EEG-only": {
+    "accuracy": 0.9005048380311317,
+    "balanced_accuracy": 0.5,
+    "f1_macro": 0.4738240177089098,
+    "auc_roc": 0.44654088225024974,
+    "observe_recall": 0.0,
+    "intent_recall": 1.0,
+    "n_features": 44,
+    "confusion_matrix": [
+      [
+        0,
+        1892
+      ],
+      [
+        0,
+        17124
+      ]
+    ]
+  },
+  "Gaze-only": {
+    "accuracy": 0.882940681531342,
+    "balanced_accuracy": 0.49729976053292163,
+    "f1_macro": 0.4819870086596698,
+    "auc_roc": 0.4867830278387269,
+    "observe_recall": 0.015856236786469344,
+    "intent_recall": 0.978743284279374,
+    "n_features": 19,
+    "confusion_matrix": [
+      [
+        30,
+        1862
+      ],
+      [
+        364,
+        16760
+      ]
+    ]
+  },
+  "Fused": {
+    "accuracy": 0.9005048380311317,
+    "balanced_accuracy": 0.5,
+    "f1_macro": 0.4738240177089098,
+    "auc_roc": 0.45550597420728695,
+    "observe_recall": 0.0,
+    "intent_recall": 1.0,
+    "n_features": 63,
+    "confusion_matrix": [
+      [
+        0,
+        1892
+      ],
+      [
+        0,
+        17124
+      ]
+    ]
+  },
+  "fusion_improvement_auc": -0.031277053631439955
+}

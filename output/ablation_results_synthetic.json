@@ -1,0 +1,377 @@
+{
+  "Logistic Regression": {
+    "EEG-only": {
+      "per_subject": {
+        "accuracy_mean": 0.7125,
+        "accuracy_std": 0.09958899914147143,
+        "f1_mean": 0.7099811347428848,
+        "f1_std": 0.10682493607852288,
+        "auc_mean": 0.7695624999999999,
+        "auc_std": 0.12362219025260619,
+        "n_folds": 5
+      },
+      "accuracy": 0.700625,
+      "f1": 0.7022995649471722,
+      "auc_roc": 0.7706328125,
+      "classification_report": {
+        "observe": {
+          "precision": 0.7029077117572693,
+          "recall": 0.695,
+          "f1-score": 0.6989314896291641,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.6983930778739185,
+          "recall": 0.70625,
+          "f1-score": 0.7022995649471722,
+          "support": 800.0
+        },
+        "accuracy": 0.700625,
+        "macro avg": {
+          "precision": 0.7006503948155939,
+          "recall": 0.700625,
+          "f1-score": 0.7006155272881681,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7006503948155938,
+          "recall": 0.700625,
+          "f1-score": 0.7006155272881682,
+          "support": 1600.0
+        }
+      }
+    },
+    "Gaze-only": {
+      "per_subject": {
+        "accuracy_mean": 0.68625,
+        "accuracy_std": 0.010383279828647621,
+        "f1_mean": 0.6714771844388617,
+        "f1_std": 0.01753061760559857,
+        "auc_mean": 0.7603359375,
+        "auc_std": 0.01838312293883645,
+        "n_folds": 5
+      },
+      "accuracy": 0.68375,
+      "f1": 0.6705729166666666,
+      "auc_roc": 0.7585078125,
+      "classification_report": {
+        "observe": {
+          "precision": 0.6701388888888888,
+          "recall": 0.72375,
+          "f1-score": 0.6959134615384616,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.6997282608695652,
+          "recall": 0.64375,
+          "f1-score": 0.6705729166666666,
+          "support": 800.0
+        },
+        "accuracy": 0.68375,
+        "macro avg": {
+          "precision": 0.684933574879227,
+          "recall": 0.6837500000000001,
+          "f1-score": 0.6832431891025641,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.6849335748792271,
+          "recall": 0.68375,
+          "f1-score": 0.6832431891025641,
+          "support": 1600.0
+        }
+      }
+    },
+    "Fused (EEG+Gaze)": {
+      "per_subject": {
+        "accuracy_mean": 0.7481250000000002,
+        "accuracy_std": 0.07231117652202872,
+        "f1_mean": 0.7479049964746887,
+        "f1_std": 0.07752555645588154,
+        "auc_mean": 0.8203203125,
+        "auc_std": 0.08629057936364813,
+        "n_folds": 5
+      },
+      "accuracy": 0.751875,
+      "f1": 0.7529558182949595,
+      "auc_roc": 0.8264015625000001,
+      "classification_report": {
+        "observe": {
+          "precision": 0.7540983606557377,
+          "recall": 0.7475,
+          "f1-score": 0.7507846829880728,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7496902106567535,
+          "recall": 0.75625,
+          "f1-score": 0.7529558182949595,
+          "support": 800.0
+        },
+        "accuracy": 0.751875,
+        "macro avg": {
+          "precision": 0.7518942856562456,
+          "recall": 0.7518750000000001,
+          "f1-score": 0.7518702506415161,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7518942856562455,
+          "recall": 0.751875,
+          "f1-score": 0.7518702506415161,
+          "support": 1600.0
+        }
+      }
+    }
+  },
+  "SVM (RBF)": {
+    "EEG-only": {
+      "per_subject": {
+        "accuracy_mean": 0.69875,
+        "accuracy_std": 0.10638961415476605,
+        "f1_mean": 0.7000227068749318,
+        "f1_std": 0.1055127341396214,
+        "auc_mean": 0.76246875,
+        "auc_std": 0.11510223196667795,
+        "n_folds": 5
+      },
+      "accuracy": 0.694375,
+      "f1": 0.6949469744229569,
+      "auc_roc": 0.76648125,
+      "classification_report": {
+        "observe": {
+          "precision": 0.6951066499372648,
+          "recall": 0.6925,
+          "f1-score": 0.6938008766437069,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.6936488169364882,
+          "recall": 0.69625,
+          "f1-score": 0.6949469744229569,
+          "support": 800.0
+        },
+        "accuracy": 0.694375,
+        "macro avg": {
+          "precision": 0.6943777334368765,
+          "recall": 0.694375,
+          "f1-score": 0.6943739255333319,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.6943777334368764,
+          "recall": 0.694375,
+          "f1-score": 0.6943739255333319,
+          "support": 1600.0
+        }
+      }
+    },
+    "Gaze-only": {
+      "per_subject": {
+        "accuracy_mean": 0.693125,
+        "accuracy_std": 0.011759304826391728,
+        "f1_mean": 0.6673866792751854,
+        "f1_std": 0.02637314175145554,
+        "auc_mean": 0.7506054687499999,
+        "auc_std": 0.01551075420776661,
+        "n_folds": 5
+      },
+      "accuracy": 0.686875,
+      "f1": 0.6589516678012253,
+      "auc_roc": 0.750815625,
+      "classification_report": {
+        "observe": {
+          "precision": 0.6605800214822771,
+          "recall": 0.76875,
+          "f1-score": 0.7105719237435009,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7234678624813154,
+          "recall": 0.605,
+          "f1-score": 0.6589516678012253,
+          "support": 800.0
+        },
+        "accuracy": 0.686875,
+        "macro avg": {
+          "precision": 0.6920239419817963,
+          "recall": 0.686875,
+          "f1-score": 0.6847617957723631,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.6920239419817963,
+          "recall": 0.686875,
+          "f1-score": 0.6847617957723631,
+          "support": 1600.0
+        }
+      }
+    },
+    "Fused (EEG+Gaze)": {
+      "per_subject": {
+        "accuracy_mean": 0.7418750000000001,
+        "accuracy_std": 0.07330373455697875,
+        "f1_mean": 0.7440257615206102,
+        "f1_std": 0.07576516571042165,
+        "auc_mean": 0.8186875,
+        "auc_std": 0.08258138944440423,
+        "n_folds": 5
+      },
+      "accuracy": 0.755625,
+      "f1": 0.7590881084411584,
+      "auc_roc": 0.83053984375,
+      "classification_report": {
+        "observe": {
+          "precision": 0.7631917631917632,
+          "recall": 0.74125,
+          "f1-score": 0.7520608750792644,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7484811664641555,
+          "recall": 0.77,
+          "f1-score": 0.7590881084411584,
+          "support": 800.0
+        },
+        "accuracy": 0.755625,
+        "macro avg": {
+          "precision": 0.7558364648279594,
+          "recall": 0.755625,
+          "f1-score": 0.7555744917602114,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7558364648279593,
+          "recall": 0.755625,
+          "f1-score": 0.7555744917602114,
+          "support": 1600.0
+        }
+      }
+    }
+  },
+  "Random Forest": {
+    "EEG-only": {
+      "per_subject": {
+        "accuracy_mean": 0.7093750000000001,
+        "accuracy_std": 0.10514127400787951,
+        "f1_mean": 0.6979730993273344,
+        "f1_std": 0.11665704299583125,
+        "auc_mean": 0.7579765624999999,
+        "auc_std": 0.12595438249511828,
+        "n_folds": 5
+      },
+      "accuracy": 0.70375,
+      "f1": 0.699238578680203,
+      "auc_roc": 0.76275625,
+      "classification_report": {
+        "observe": {
+          "precision": 0.6978155339805825,
+          "recall": 0.71875,
+          "f1-score": 0.708128078817734,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7100515463917526,
+          "recall": 0.68875,
+          "f1-score": 0.699238578680203,
+          "support": 800.0
+        },
+        "accuracy": 0.70375,
+        "macro avg": {
+          "precision": 0.7039335401861675,
+          "recall": 0.70375,
+          "f1-score": 0.7036833287489686,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7039335401861675,
+          "recall": 0.70375,
+          "f1-score": 0.7036833287489686,
+          "support": 1600.0
+        }
+      }
+    },
+    "Gaze-only": {
+      "per_subject": {
+        "accuracy_mean": 0.7224999999999999,
+        "accuracy_std": 0.021776564237730407,
+        "f1_mean": 0.7067987803334564,
+        "f1_std": 0.0288962002277362,
+        "auc_mean": 0.7986093750000001,
+        "auc_std": 0.027849941879567904,
+        "n_folds": 5
+      },
+      "accuracy": 0.72625,
+      "f1": 0.7129750982961992,
+      "auc_roc": 0.797196875,
+      "classification_report": {
+        "observe": {
+          "precision": 0.7070938215102975,
+          "recall": 0.7725,
+          "f1-score": 0.7383512544802867,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7493112947658402,
+          "recall": 0.68,
+          "f1-score": 0.7129750982961992,
+          "support": 800.0
+        },
+        "accuracy": 0.72625,
+        "macro avg": {
+          "precision": 0.7282025581380689,
+          "recall": 0.7262500000000001,
+          "f1-score": 0.725663176388243,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7282025581380688,
+          "recall": 0.72625,
+          "f1-score": 0.7256631763882431,
+          "support": 1600.0
+        }
+      }
+    },
+    "Fused (EEG+Gaze)": {
+      "per_subject": {
+        "accuracy_mean": 0.76125,
+        "accuracy_std": 0.09120718173477348,
+        "f1_mean": 0.7555454850388816,
+        "f1_std": 0.09692659895420605,
+        "auc_mean": 0.8354687500000001,
+        "auc_std": 0.09394717546229774,
+        "n_folds": 5
+      },
+      "accuracy": 0.766875,
+      "f1": 0.7661442006269592,
+      "auc_roc": 0.843884375,
+      "classification_report": {
+        "observe": {
+          "precision": 0.7652173913043478,
+          "recall": 0.77,
+          "f1-score": 0.767601246105919,
+          "support": 800.0
+        },
+        "intent": {
+          "precision": 0.7685534591194969,
+          "recall": 0.76375,
+          "f1-score": 0.7661442006269592,
+          "support": 800.0
+        },
+        "accuracy": 0.766875,
+        "macro avg": {
+          "precision": 0.7668854252119224,
+          "recall": 0.766875,
+          "f1-score": 0.7668727233664391,
+          "support": 1600.0
+        },
+        "weighted avg": {
+          "precision": 0.7668854252119224,
+          "recall": 0.766875,
+          "f1-score": 0.7668727233664392,
+          "support": 1600.0
+        }
+      }
+    }
+  }
+}

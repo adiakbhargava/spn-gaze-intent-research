@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data (large files - download separately)
+data/raw/
+data/processed/
+*.mat
+*.dat
+*.fif
+*.edf
+*.bdf
+*.set
+*.fdt
+
+# Model artifacts
+models/saved/
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.onnx
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & output
+logs/
+*.log
+reports/generated/
+
+# Environment
+.env
+.env.local

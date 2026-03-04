@@ -1,0 +1,106 @@
+# Intent Stream Pipeline Configuration
+
+data:
+  eegeyenet:
+    root_dir: "data/raw/eegeyenet"
+    paradigm: "prosaccade"  # prosaccade | antisaccade | visual_symbol_search
+    sampling_rate: 500  # Hz (EEGEyeNet native rate)
+    n_channels: 128
+  bci2000:
+    root_dir: "data/raw/bci2000"
+    sampling_rate: 256  # Hz
+  rsod:
+    root_dir: "data/raw/eeget-rsod"
+    sampling_rate: 500          # Hz — NE Enobio 32
+    n_channels: 32
+    trial_duration_ms: 3000     # ms — each satellite image
+    et_sampling_rate: 250       # Hz — SMI RED250 eye tracker
+    notch_freq: 50.0            # Hz — mains noise (Asia/EU power grid)
+    use_merged: true            # use pre-aligned merged/ files
+  als:
+    root_dir: "data/raw/eeget-als"
+    sampling_rate: 128          # Hz — Emotiv EPOC Flex
+    n_channels: 32
+    trial_duration_ms: 1500     # ms — letter dwell / scan window
+    et_sampling_rate: 30        # Hz — Tobii (approximate)
+    notch_freq: 50.0            # Hz — mains noise (Vietnam power grid)
+    use_healthy_only: true      # exclude 6 ALS patients (n too small)
+    n_healthy_subjects: 20      # id1 through id20
+
+preprocessing:
+  eeg:
+    lowcut: 1.0       # Hz — high-pass filter
+    highcut: 45.0      # Hz — low-pass filter
+    notch: 60.0        # Hz — line noise removal (US, for synthetic/EEGEyeNet)
+    # Note: RSOD and ALS use notch=50 Hz (set in their dataset configs above)
+    reference: "average"
+  eye_tracking:
+    velocity_threshold: 30.0  # deg/s — saccade detection
+    min_fixation_ms: 100      # ms — minimum fixation duration
+    # Note: for ALS (30 Hz ET), min_fixation_ms is automatically raised to 133 ms
+    # and saccade detection is skipped (see gaze_features.py)
+
+features:
+  eeg:
+    bands:
+      theta: [4, 7]
+      alpha: [8, 12]
+      mu: [8, 13]
+      beta: [13, 30]
+    channels_of_interest:
+      occipitoparietal: ["Oz", "O1", "O2", "Pz", "P3", "P4", "POz", "PO3", "PO4"]
+      central: ["Cz", "C3", "C4"]
+    window_ms: 1000     # ms — epoch window for feature extraction
+    pre_stimulus_ms: 500  # ms — pre-stimulus baseline
+    method: "welch"     # welch | ar | fft
+  gaze:
+    features: ["fixation_duration", "saccade_amplitude", "saccade_velocity",
+               "pupil_diameter", "gaze_x", "gaze_y"]
+    aoi_radius: 2.0     # degrees visual angle for area-of-interest
+
+classification:
+  test_size: 0.2
+  cv_folds: 5
+  per_subject: true     # per-subject cross-validation
+  models:
+    logistic_regression:
+      C: 1.0
+      max_iter: 1000
+    svm:
+      kernel: "rbf"
+      C: 1.0
+      gamma: "scale"
+    random_forest:
+      n_estimators: 200
+      max_depth: 10
+    cnn_1d:
+      n_filters: [32, 64]
+      kernel_sizes: [5, 3]
+      dropout: 0.3
+      learning_rate: 0.001
+      epochs: 50
+      batch_size: 32
+    lstm:
+      hidden_size: 64
+      n_layers: 2
+      dropout: 0.3
+      learning_rate: 0.001
+      epochs: 50
+      batch_size: 32
+
+streaming:
+  eeg_rate: 500        # Hz — replay rate for EEG
+  et_rate: 500         # Hz — replay rate for eye-tracking
+  chunk_size: 32       # samples per LSL push
+  buffer_sec: 2.0      # seconds of data to buffer
+
+demo:
+  ui:
+    grid_size: 3        # 3x3 target grid
+    window_width: 1200
+    window_height: 800
+    confidence_threshold: 0.7  # minimum confidence for "click"
+  flask:
+    host: "127.0.0.1"
+    port: 5000
+    debug: false
