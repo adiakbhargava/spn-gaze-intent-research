@@ -4,7 +4,7 @@
 
 This repository contains the offline training, ablation study, and evaluation code that validates the central thesis: multimodal fusion of EEG and gaze signals improves intent detection over either modality alone, addressing the Midas touch problem in gaze-based interfaces.
 
-Based on [Reddy et al. (CHI 2024)](dl.acm.org/doi/10.1145/3613904.3641925): *"Towards an Eye-Brain-Computer Interface: Combining Gaze with the Stimulus-Preceding Negativity for Target Selections in XR."*
+Based on [Reddy et al. (CHI 2024)](https://dl.acm.org/doi/10.1145/3613904.3641925): *"Towards an Eye-Brain-Computer Interface: Combining Gaze with the Stimulus-Preceding Negativity for Target Selections in XR."*
 
 > **Companion repository:** [intent-gateway](https://github.com/adiakbhargava/intent-gateway) — the production Rust implementation of real-time EEG+gaze fusion.
 
