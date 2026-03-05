@@ -41,6 +41,12 @@ models/saved/
 # Jupyter
 .ipynb_checkpoints/
 
+# Test cache
+.pytest_cache/
+
+# Claude
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db

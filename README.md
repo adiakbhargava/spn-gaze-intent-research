@@ -6,7 +6,7 @@ This repository contains the offline training, ablation study, and evaluation co
 
 Based on [Reddy et al. (CHI 2024)](https://dl.acm.org/doi/10.1145/3613904.3642065): *"Towards an Eye-Brain-Computer Interface: Combining Gaze with the Stimulus-Preceding Negativity for Target Selections in XR."*
 
-> **Companion repository:** [intent-gateway](https://github.com/REPLACE/intent-gateway) — the production Rust implementation of real-time EEG+gaze fusion.
+> **Companion repository:** [intent-gateway](https://github.com/adiakbhargava/intent-gateway) — the production Rust implementation of real-time EEG+gaze fusion.
 
 ## Architecture
 

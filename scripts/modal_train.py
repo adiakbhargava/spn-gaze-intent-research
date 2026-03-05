@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Modal Cloud Training for intent-stream-pipeline.
+Modal Cloud Training for spn-gaze-intent-research.
 
 Runs the ablation study and model training on Modal's serverless
 infrastructure instead of local compute. Synthetic data is generated
@@ -35,7 +35,7 @@ import modal
 # Modal configuration
 # ---------------------------------------------------------------------------
 
-app = modal.App("intent-stream-pipeline")
+app = modal.App("spn-gaze-intent-research")
 
 # Persistent volume for training output (survives across runs)
 output_volume = modal.Volume.from_name("intent-output", create_if_missing=True)

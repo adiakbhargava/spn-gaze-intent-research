@@ -401,7 +401,7 @@ def train_neural_models(
         results[model_name] = metrics
         logger.info(f"  Val accuracy: {metrics['accuracy']:.3f}, F1: {metrics['f1']:.3f}")
 
-        # Save model weights for fused mode (needed for ONNX export to co-gateway)
+        # Save model weights for fused mode (needed for ONNX export to intent-gateway)
         if mode == "fused":
             MODELS_DIR.mkdir(parents=True, exist_ok=True)
             pt_path = MODELS_DIR / "conv1d_fused.pt"
@@ -438,7 +438,7 @@ def train_neural_models(
         results[model_name] = metrics
         logger.info(f"  Val accuracy: {metrics['accuracy']:.3f}, F1: {metrics['f1']:.3f}")
 
-        # Save model weights for fused mode (needed for ONNX export to co-gateway)
+        # Save model weights for fused mode (needed for ONNX export to intent-gateway)
         if mode == "fused":
             MODELS_DIR.mkdir(parents=True, exist_ok=True)
             pt_path = MODELS_DIR / "lstm_fused.pt"

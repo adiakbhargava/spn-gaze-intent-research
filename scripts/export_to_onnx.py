@@ -4,7 +4,7 @@ Export trained neural models to ONNX format.
 
 Loads a trained Conv1DFusion or LSTMFusion model from a .pt state_dict
 file and exports it as an ONNX model with named inputs ("eeg", "gaze")
-and output ("logit") for consumption by co-gateway's Rust inference engine.
+and output ("logit") for consumption by intent-gateway's Rust inference engine.
 
 Usage:
     # Export Conv1D (default)

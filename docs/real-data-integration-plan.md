@@ -1,8 +1,8 @@
-# Dataset Integration Plan for intent-stream-pipeline
+# Dataset Integration Plan for spn-gaze-intent-research
 
 ## Document Purpose
 
-This plan describes how to integrate two real EEG+eye-tracking datasets into the intent-stream-pipeline, which currently runs on synthetic data. It is written for a Claude Code instance to execute. The plan covers dataset selection, condition mapping, trial segmentation, code changes, feature pipeline adaptations, evaluation methodology, and success criteria.
+This plan describes how to integrate two real EEG+eye-tracking datasets into the spn-gaze-intent-research, which currently runs on synthetic data. It is written for a Claude Code instance to execute. The plan covers dataset selection, condition mapping, trial segmentation, code changes, feature pipeline adaptations, evaluation methodology, and success criteria.
 
 ---
 
@@ -10,7 +10,7 @@ This plan describes how to integrate two real EEG+eye-tracking datasets into the
 
 ### 1.1 Primary Dataset: EEGET-RSOD (Remote Sensing Object Detection)
 
-- **Location:** `C:\AAKB\0-Projects\co-gateway\data\eeget-rsod\`
+- **Location:** `data/eeget-rsod\`
 - **Subjects:** 38 (P01 through P38)
 - **EEG:** 32 channels (NE Enobio 32) at 500 Hz, stored as EDF files in `EEG/P{XX}.edf`
 - **Eye-tracking:** SMI RED250 at 250 Hz, stored as comma-delimited text in `ET/P{XX}.txt` (BeGaze export format)
@@ -24,7 +24,7 @@ This plan describes how to integrate two real EEG+eye-tracking datasets into the
 
 ### 1.2 Secondary Dataset: EEGET-ALS (Spelling BCI)
 
-- **Location:** `C:\AAKB\0-Projects\co-gateway\data\eeget-als\EEGET-ALS Dataset\`
+- **Location:** `data/eeget-als\EEGET-ALS Dataset\`
 - **Subjects:** 26 total (6 ALS patients: ALS01-ALS06, 20 healthy: id1-id20)
 - **EEG:** 32 channels (Emotiv EPOC Flex) at 128 Hz, stored as EDF in `{subject}/time1/scenario{N}/EEG.edf`
 - **Eye-tracking:** Tobii at ~30 Hz, stored as CSV in `{subject}/time1/scenario{N}/ET.csv`
@@ -181,13 +181,13 @@ Add new data source configurations:
 ```yaml
 data:
   rsod:
-    root_dir: "C:/AAKB/0-Projects/co-gateway/data/eeget-rsod"
+    root_dir: "data/eeget-rsod"
     sampling_rate: 500
     n_channels: 32
     trial_duration_ms: 3000
     et_sampling_rate: 250
   als:
-    root_dir: "C:/AAKB/0-Projects/co-gateway/data/eeget-als/EEGET-ALS Dataset"
+    root_dir: "data/eeget-als/EEGET-ALS Dataset"
     sampling_rate: 128
     n_channels: 32
     trial_duration_ms: 1500
@@ -445,15 +445,15 @@ If using the separate files:
 
 ## 11. Data Paths Quick Reference
 
-The datasets live in the co-gateway project (already downloaded):
+The datasets live in the intent-gateway project (already downloaded):
 
 ```
-C:\AAKB\0-Projects\co-gateway\data\eeget-rsod\
+data/eeget-rsod\
   EEG\P01.edf ... P38.edf     (32ch EEG @ 500 Hz)
   ET\P01.txt ... P38.txt       (250 Hz SMI RED250 eye tracking)
   merged\P01\ ... P38\         (paired EDF+TXT per subject)
 
-C:\AAKB\0-Projects\co-gateway\data\eeget-als\EEGET-ALS Dataset\
+data/eeget-als\EEGET-ALS Dataset\
   id1\ ... id20\               (healthy subjects)
     time1\scenario1\           (first recording session)
       EEG.edf                  (32ch EEG @ 128 Hz)

@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
-name = "intent-stream-pipeline"
+name = "spn-gaze-intent-research"
 version = "0.1.0"
 description = "Gaze-Guided Intent Decoding: Real-Time EEG+Eye-Tracking Fusion Pipeline for Non-Invasive Selection"
 readme = "README.md"
