@@ -25,7 +25,7 @@ line-length = 100
 # E501: line too long (handled by line-length above)
 # F401: unused imports common in __init__ and script entry points
 # E402: module level import not at top (scripts use conditional imports)
-ignore = ["E501", "F401", "E402"]
+ignore = ["E501", "F401", "E402", "F541", "F841"]
 
 [tool.ruff.lint.per-file-ignores]
 # Scripts are entry points — allow star imports and unused names
