@@ -1,5 +1,7 @@
 # SPN + Gaze Intent Research
 
+[![CI](https://github.com/adiakbhargava/spn-gaze-intent-research/actions/workflows/ci.yml/badge.svg)](https://github.com/adiakbhargava/spn-gaze-intent-research/actions/workflows/ci.yml)
+
 **Research validation pipeline for EEG+eye-tracking fusion intent decoding, based on Stimulus-Preceding Negativity (SPN).**
 
 This repository contains the offline training, ablation study, and evaluation code that validates the central thesis: multimodal fusion of EEG and gaze signals improves intent detection over either modality alone, addressing the Midas touch problem in gaze-based interfaces.
